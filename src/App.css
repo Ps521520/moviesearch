@@ -2,37 +2,115 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: rgb(41, 11, 49);
+  color:rgb(241, 194, 238);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form{
+  width:80%;
+  padding:5px auto;
+  margin: 10px auto;
+  font-size: 0.8rem;
+  animation: appear 5s;
+  position: relative;
+}
+.form label{
+  padding-right:5px;
+}
+.form input{
+  border: 1px solid rgb(41, 11, 49);
+  background-color: rgb(241, 194, 238);
+  width:60%;
+  padding:10px;
+  margin : 5px;
+  text-align: center;
+  border-radius: 50px;
+  animation: move 3s;
+  position: relative;
+}
+.form input:hover{
+  opacity: 0.8;
+}
+.form button{
+  border: 1px solid rgb(41, 11, 49);
+  background-color: rgb(66, 250, 66);
+  color:rgb(255, 0, 238);
+  width:30%;
+  padding:10px;
+  margin : 5px;
+  text-align: center;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.form button:hover{
+  opacity: 0.5;
+}
+@keyframes move{
+  from {left: -1500px;}
+  to {left: 0px;}
+}
+@keyframes appear{
+  from {opacity:0;}
+  to {opacity: 1;}
+}
+.title{
+  animation: titlemove 3s;
+  position: relative;
+}
+@keyframes titlemove{
+  from {top: -100px;}
+  to {top: 0px;}
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.cardlist{
+  display: inline;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.card{
+  background-color: transparent;
+  height:300px;
+  width:250px;
+  border:1px solid red;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+  perspective: 1000px;
+}
+.cardinner{
+  position: relative;
+  height:100%;
+  width:100%;
+  text-align:center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.card img{
+  height:100%;
+  width:100%;
+  object-fit: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card:hover .cardinner {
+  transform: rotateY(180deg);
+}
+
+.back{
+  position: absolute;
+  height:100%;
+  width:100%;
+  transform: rotateY(180deg);
+  color: antiquewhite;
+  background-color: black;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.poster{
+  position: absolute;
+  height:100%;
+  width:100%;
+  background-color: black;
 }
