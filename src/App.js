@@ -9,7 +9,6 @@ function App() {
       <h1> Movie Search </h1>
       </div>
       <Content/>
-      
     </div>
   );
 }
